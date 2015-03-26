@@ -1,8 +1,9 @@
 # giffit
 
 ## Prereqs
-* Ruby 2.0+
-* Bundler 1.8+
+* Ruby >=2.0
+* Bundler >=1.8
+* Imagemagick >=6.9
 
 ## Install
 * ```git clone https://github.com/brokunMusheen/giffit.git <project name>```
