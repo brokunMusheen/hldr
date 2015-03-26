@@ -34,8 +34,8 @@ get '/gif/*' do |gif_name|
 
 end
 
-get '/*.gif' do |gif_name|
-  File.read("tmp/#{gif_name}.gif")
+get '/tmp/*.gif' do |gif_name|
+  File.read "/tmp/#{gif_name}.gif"
 end
 
 # Stylesheet route
