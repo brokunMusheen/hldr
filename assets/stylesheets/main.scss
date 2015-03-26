@@ -1,0 +1,10 @@
+@import "main/fonts";
+@import 'main/variables';
+
+body {
+  background-color: $color_primary;
+}
+
+h1 {
+  font-family: $font_primary;
+}
