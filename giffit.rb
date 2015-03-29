@@ -21,16 +21,17 @@ get '/' do
   erb :page_home, layout: :main, layout_options: { views: 'views/layouts' }
 end
 
-get '/gif/*' do |gif_name|
+get '/gif/*/*/*' do |gif_name, width, height|
 
   #http://gph.to/1HCPQwE
   url = "http://media.giphy.com/media/#{gif_name}/giphy.gif"
 
   size = Hash.new
-  size[:width] = params[:width] || 50
-  size[:height] = params[:height] || 50
+  size[:width] = width || 100
+  size[:height] = height || 100
 
-  image_tag Giffer::transform url, size
+  content_type 'image/gif'
+  Giffer::transform url, size
 
 end
 
