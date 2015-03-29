@@ -1,1 +1,16 @@
 $font_primary: 'Lucida Grande', 'Lucida Sans', Tahoma, Ubuntu sans-serif;
+
+@font-face {
+    font-family: 'bebasregular';
+    src: url('fonts/BEBAS___-webfont.eot');
+    src: url('fonts/BEBAS___-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/BEBAS___-webfont.woff2') format('woff2'),
+         url('fonts/BEBAS___-webfont.woff') format('woff'),
+         url('fonts/BEBAS___-webfont.ttf') format('truetype'),
+         url('fonts/BEBAS___-webfont.svg#bebasregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+$bebas: 'bebasregular', Tahoma, Ubuntu, sans-serif;
