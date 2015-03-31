@@ -21,6 +21,10 @@ get '/' do
   erb :page_home, layout: :main, layout_options: { views: 'views/layouts' }
 end
 
+get '/alpha' do
+  erb :page_alpha, layout: :main, layout_options: { views: 'views/layouts' }
+end
+
 get '/gif/*' do |gif_name|
 
   #http://gph.to/1HCPQwE
