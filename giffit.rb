@@ -23,6 +23,11 @@ end
 
 get '/gif/*/*/*' do |gif_name, width, height|
 
+get '/alpha' do
+  erb :page_alpha, layout: :main, layout_options: { views: 'views/layouts' }
+end
+
+
   #http://gph.to/1HCPQwE
   url = "http://media.giphy.com/media/#{gif_name}/giphy.gif"
 
