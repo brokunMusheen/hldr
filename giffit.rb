@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'mini_magick'
 require 'tilt/sass'
+require_relative 'lib/giphy_api'
 
 # Include view helpers
 require_relative 'views/helpers/html'
@@ -21,18 +22,20 @@ get '/' do
   erb :page_home, layout: :main, layout_options: { views: 'views/layouts' }
 end
 
-get '/gif/*/*/*' do |gif_name, width, height|
+get %r{([\d]+)x([\d]+)} do |width, height|
 
-  #http://gph.to/1HCPQwE
-  url = "http://media.giphy.com/media/#{gif_name}/giphy.gif"
+  query = params[:q].split.join('+') || "random"
 
   size = Hash.new
-  size[:width] = width || 100
-  size[:height] = height || 100
+  size[:width] = width
+  size[:height] = height
 
+  api = GiphyApi.new
+  result_url = api.search query
+
+  #send_file open(result), type: :gif, disposition: 'inline'
   content_type 'image/gif'
-  Giffer::transform url, size
-
+  Giffer::transform result_url, size
 end
 
 get '/tmp/*.gif' do |gif_name|
